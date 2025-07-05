@@ -1,7 +1,7 @@
 # 🌿⚔️ Verdant Valor 
 > ✨ 신비로운 숲에서의 전투와 모험의 세계로!
 
-![image](https://github.com/user-attachments/assets/fbc73c4d-32c0-4c16-a3e7-bd9e29e91039)
+![image](https://github.com/user-attachments/assets/9bacff69-a94f-4ae6-a570-01383085a5fc)
 
 <p align="center">
   <b>⚔️ 2D Action RPG – A Knight’s Adventure Unfolding in a Mysterious Forest 🌲</b> <br>
