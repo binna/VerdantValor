@@ -102,7 +102,13 @@
 
 ## Sound Resources
 
--  → 
+- [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악
+This sound used in this project are from Pixabay
+이 음악은 Pixabay에서 제공됩니다
+
+Free for commercial use, no attribution required
+상업적 사용 무료, 출처 표기 불필요
+
 
 <br><br>
 
