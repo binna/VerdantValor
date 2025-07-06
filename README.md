@@ -103,8 +103,8 @@
 ## Sound Resources
 
 - [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악
-- [DoorOpening](https://pixabay.com/sound-effects/door-opening-353874/) → 문 여는 소리
-- [DoorClose](https://pixabay.com/sound-effects/door-close-79921/) → 문 닫는 소리
+- [DoorOpening](https://pixabay.com/sound-effects/door-opening-353874/) → 문 여는 소리  
+- [DoorClose](https://pixabay.com/sound-effects/door-close-79921/) → 문 닫는 소리  
   This background music is used for the game intro scene.  
   이 음악은 [Pixabay](https://pixabay.com)에서 제공되었습니다.
 
