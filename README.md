@@ -102,12 +102,13 @@
 
 ## Sound Resources
 
-- [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악
-This sound used in this project are from Pixabay
-이 음악은 Pixabay에서 제공됩니다
+- [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악  
+  This background music is used for the game intro scene.  
+  이 음악은 [Pixabay](https://pixabay.com)에서 제공되었습니다.
 
-Free for commercial use, no attribution required
-상업적 사용 무료, 출처 표기 불필요
+- [TownBGM](https://assetstore.unity.com/packages/audio/music/electronic/8-bit-rpg-adventure-music-pack-184726), Track: 04 Overworld → 마을 배경 음악  
+  This BGM is used in the village area of the game.  
+  이 음원은 Unity Asset Store에서 제공된 8-bit RPG Adventure Music Pack의 일부입니다.
 
 
 <br><br>
