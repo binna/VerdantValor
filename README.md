@@ -96,7 +96,8 @@
 
 ## Art Resources
 
-- `` → 
+- `` → [캐릭터](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
+- `Resources/Images` 2D Pixel Item Pack 아이템 이미지
 
 <br><br>
 
