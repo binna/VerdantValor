@@ -4,13 +4,6 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Ground
-  - Enemy
-  - Apple
-  - Pipe
-  - PlayerHair
-  - Item
-  - Monster
   - Ladder
   layers:
   - Default
@@ -19,11 +12,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Monster
-  - Item
-  - Player
-  - PlayerWeapon
   - Ground
+  - Player
+  - Item
+  - Monster
+  - 
   - 
   - 
   - 
@@ -48,9 +41,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: test
-    uniqueID: 2412362613
     locked: 0
   m_RenderingLayers:
   - Default

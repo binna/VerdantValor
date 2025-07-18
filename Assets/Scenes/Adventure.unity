@@ -1377,9 +1377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 301911799}
-  slotButton: {fileID: 69494972}
-  isEmpty: 1
 --- !u!114 &69494972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,9 +1511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1253421380}
-  slotButton: {fileID: 85194012}
-  isEmpty: 1
 --- !u!114 &85194012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,9 +1854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 991992741}
-  slotButton: {fileID: 113970642}
-  isEmpty: 1
 --- !u!114 &113970642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1997,9 +1988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1964334227}
-  slotButton: {fileID: 186202381}
-  isEmpty: 1
 --- !u!114 &186202381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2134,9 +2122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1807520683}
-  slotButton: {fileID: 272844815}
-  isEmpty: 1
 --- !u!114 &272844815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2926,7 +2911,7 @@ SpriteRenderer:
   m_Size: {x: 1.4, y: 1.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &424398531
@@ -3218,11 +3203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c9111b2d448604abfaf3f7dcbb6011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 699741938}
   portalEffect: {fileID: 6441873368008721234}
-  loadingImage: {fileID: 1900295648377515317}
-  progressBar: {fileID: 548548324}
-  sceneIdx: 0
+  scene: 0
+  player: {fileID: 0}
 --- !u!1 &468737222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,9 +3383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 88399861}
-  slotButton: {fileID: 475017724}
-  isEmpty: 1
 --- !u!114 &475017724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4938,7 +4918,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5000,10 +4980,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 1445021715}
-  hp: 100
-  moveSpeed: 5
-  jumpPower: 12
-  atkDamage: 3
 --- !u!70 &539430220
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6295,9 +6271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 679940499}
-  slotButton: {fileID: 776062595}
-  isEmpty: 1
 --- !u!114 &776062595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7809,7 +7782,7 @@ SpriteRenderer:
   m_Size: {x: 0.28, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &991769583
@@ -8227,9 +8200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1899886087}
-  slotButton: {fileID: 1059729407}
-  isEmpty: 1
 --- !u!114 &1059729407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8530,9 +8500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 973514389}
-  slotButton: {fileID: 1118566671}
-  isEmpty: 1
 --- !u!114 &1118566671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8667,9 +8634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1918487960}
-  slotButton: {fileID: 1129652948}
-  isEmpty: 1
 --- !u!114 &1129652948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17571,9 +17535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1363230571}
-  slotButton: {fileID: 1578597600}
-  isEmpty: 1
 --- !u!114 &1578597600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17708,9 +17669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 2103758489}
-  slotButton: {fileID: 1579934638}
-  isEmpty: 1
 --- !u!114 &1579934638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18409,9 +18367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 706556378}
-  slotButton: {fileID: 1652138258}
-  isEmpty: 1
 --- !u!114 &1652138258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18932,9 +18887,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 632545054}
-  slotButton: {fileID: 1752213270}
-  isEmpty: 1
 --- !u!114 &1752213270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19031,6 +18983,7 @@ Transform:
   - {fileID: 777847064}
   - {fileID: 1945185162}
   - {fileID: 830542465}
+  - {fileID: 5533454198930564128}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788065419
@@ -19347,10 +19300,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 1954935551}
   inventoryButton: {fileID: 715326530}
-  items:
-  - {fileID: 3377852288497385688, guid: dbe6204d2fcd4c043b4bdda3f0be7180, type: 3}
-  - {fileID: 4851506213903370616, guid: e6f862a9346f20b4f8c40d1027d19451, type: 3}
-  - {fileID: 6906983604990538211, guid: fa53b7e579b8a8b4aab6a4093621201a, type: 3}
   slots: []
   slotGroup: {fileID: 2125861804}
 --- !u!4 &1846792561
@@ -19458,9 +19407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 762811427}
-  slotButton: {fileID: 1854763435}
-  isEmpty: 1
 --- !u!114 &1854763435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19806,9 +19752,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8decb99bb55a438ae3464ffb3df94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImage: {fileID: 1043643258}
-  slotButton: {fileID: 1903514952}
-  isEmpty: 1
 --- !u!114 &1903514952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33731,7 +33674,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 15.36}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1986538237
@@ -39936,7 +39879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6465249256420619621}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -22.31, y: -2.33, z: 0}
   m_LocalScale: {x: 1.46, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -39945,7 +39888,7 @@ Transform:
   - {fileID: 426285390306248703}
   - {fileID: 202107812029224531}
   - {fileID: 3334293668685714402}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1759782409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &5600369700426776591
 ParticleSystem:
@@ -59226,7 +59169,7 @@ SpriteRenderer:
   m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8673805220152718117
@@ -64009,4 +63952,3 @@ SceneRoots:
   - {fileID: 539430218}
   - {fileID: 2597051610670956994}
   - {fileID: 478868344}
-  - {fileID: 5533454198930564128}

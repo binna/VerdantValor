@@ -1,3 +1,4 @@
+using Knight.Town;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,15 +6,6 @@ namespace Knight
 {
     public class SoundManager : MonoBehaviour
     {
-        [SerializeField]
-        private AudioSource bgmAudio;
-
-        [SerializeField]
-        private AudioSource eventAudio;
-        
-        [SerializeField]
-        private AudioClip[] clips;
-
         [SerializeField] 
         private Slider bgmVolume;
         
@@ -25,19 +17,108 @@ namespace Knight
         
         [SerializeField] 
         private Toggle eventMute;
+        
+        private AudioSource _bgmAudio;
+        private AudioSource _eventAudio;
+
+        private AudioClip _introBGM;
+        private AudioClip _townBGM;
+        
+        private AudioClip _portalEvent;
+        
+        private static SoundManager _instance;
+
+        public static SoundManager GetInstance()
+        {
+            if (_instance == null)
+            {
+                GameObject soundManager = GameObject.Find(Define.GameObjectNames.SOUND_MANAGER);
+                
+                if (soundManager == null)
+                {
+                    soundManager = new GameObject(Define.GameObjectNames.SOUND_MANAGER);
+                    soundManager.AddComponent<SoundManager>();
+                }
+                
+                DontDestroyOnLoad(soundManager);
+                    
+                _instance = soundManager.GetComponent<SoundManager>();
+            }
+
+            return _instance;
+        }
 
         private void Awake()
         {
-            bgmVolume.value = bgmAudio.volume;
-            eventVolume.value = eventAudio.volume;
+            foreach (Transform child in transform)
+            {
+                switch (child.gameObject.name)
+                {
+                    case Define.GameObjectNames.BGM_AUDIO:
+                        _bgmAudio = child.GetComponent<AudioSource>();
+                        break;
+                    case Define.GameObjectNames.EVENT_AUDIO:
+                        _eventAudio = child.GetComponent<AudioSource>();
+                        break;
+                }
+            }
             
-            bgmMute.isOn = bgmAudio.mute; 
-            eventMute.isOn = eventAudio.mute;
+            if (_bgmAudio == null)
+            {
+                GameObject bgmAudio = new GameObject(Define.GameObjectNames.BGM_AUDIO);
+                bgmAudio.transform.SetParent(transform);
+                
+                _bgmAudio = bgmAudio.AddComponent<AudioSource>();
+                _bgmAudio.playOnAwake = false;
+                
+                bgmVolume = UIManager
+                    .GetInstance()
+                    .FindUIComponentByName<Slider>(
+                        $"{Define.UiName.Setting}", Define.UiObjectNames.SLIDER_BGM_VOLUME);
+                
+                bgmMute = UIManager
+                    .GetInstance()
+                    .FindUIComponentByName<Toggle>(
+                        $"{Define.UiName.Setting}", Define.UiObjectNames.TOGGLE_BGM_MUTE);
+            }
+
+            if (_eventAudio == null)
+            {
+                GameObject eventAudio = new GameObject(Define.GameObjectNames.EVENT_AUDIO);
+                eventAudio.transform.SetParent(transform);
+                
+                _eventAudio = eventAudio.AddComponent<AudioSource>();
+                _eventAudio.playOnAwake = false;
+                
+                eventVolume = UIManager
+                    .GetInstance()
+                    .FindUIComponentByName<Slider>(
+                        $"{Define.UiName.Setting}", Define.UiObjectNames.SLIDER_EVENT_VOLUME);
+                
+                eventMute = UIManager
+                    .GetInstance()
+                    .FindUIComponentByName<Toggle>(
+                        $"{Define.UiName.Setting}", Define.UiObjectNames.TOGGLE_EVENT_MUTE);
+            }
+
+            _introBGM = Resources.Load<AudioClip>(Define.INTRO_BGM_PATH);
+            _townBGM = Resources.Load<AudioClip>(Define.TOWN_BGM_PATH);
+            
+            _portalEvent = Resources.Load<AudioClip>(Define.PORTAL_PATH);
+            
+            bgmVolume.value = _bgmAudio.volume;
+            eventVolume.value = _eventAudio.volume;
+            
+            bgmMute.isOn = _bgmAudio.mute; 
+            eventMute.isOn = _eventAudio.mute;
+
+            
         }
 
         private void Start()
         {
-            BGMSoundPlay("Town BGM");
+            _bgmAudio.clip = _introBGM;
+            _bgmAudio.Play();
 
             bgmVolume.onValueChanged.AddListener(OnBgmVolumeChanged);
             eventVolume.onValueChanged.AddListener(OnEventVolumeChanged);
@@ -46,53 +127,50 @@ namespace Knight
             eventMute.onValueChanged.AddListener(OnEventMute);
         }
 
-        public void EventSoundPlay(string clipName)
+        public void PlaySound(Define.SoundType soundType)
         {
-            foreach (var clip in clips)
+            switch (soundType)
             {
-                if (clip.name == clipName)
-                {
-                    eventAudio.PlayOneShot(clip);
-                    return;
-                }
+                case Define.SoundType.IntroBgm:
+                    _bgmAudio.clip = _introBGM;
+                    _bgmAudio.loop = true;
+                    _bgmAudio.Play();
+                    break;
+                case Define.SoundType.TownBgm:
+                    _bgmAudio.clip = _townBGM;
+                    _bgmAudio.loop = true;
+                    _bgmAudio.Play();
+                    break;
+                case Define.SoundType.PortalEvent:
+                    _bgmAudio.loop = false;
+                    _eventAudio.PlayOneShot(_portalEvent);
+                    break;
             }
-            
-            Debug.Log($"{clipName}을 찾지 못했습니다.");
         }
         
-        private void BGMSoundPlay(string clipName)
+        public void StopBGMSound()
         {
-            foreach (var clip in clips)
-            {
-                if (clip.name == clipName)
-                {
-                    bgmAudio.clip = clip;
-                    bgmAudio.Play();
-                    return;
-                }
-            }
-            
-            Debug.Log($"{clipName}을 찾지 못했습니다.");
+            _bgmAudio.Stop();
         }
 
         private void OnBgmVolumeChanged(float value)
         {
-            bgmAudio.volume = value;
+            _bgmAudio.volume = value;
         }
 
         private void OnEventVolumeChanged(float value)
         {
-            eventAudio.volume = value;
+            _eventAudio.volume = value;
         }
 
         private void OnBgmMute(bool isMute)
         {
-            bgmAudio.mute = isMute;
+            _bgmAudio.mute = isMute;
         }
 
         private void OnEventMute(bool isMute)
         {
-            eventAudio.mute = isMute;
+            _eventAudio.mute = isMute;
         }
     }
 }
