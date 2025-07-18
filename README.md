@@ -50,8 +50,8 @@
 5. **마을 복귀 시스템 (*Return to Village*)**  
    전투 중 사망 시 자동으로 마을 위치로 복귀
 
-6. **아이템 시스템 (*Item System*)**  
-   간단한 인벤토리 인터페이스 제공  
+6. **인벤토리 (*Inventory*)**  
+   간단한 인벤토리 UI 제공  
    아이템 획득 및 소비 가능
 
 8. **유저 정보 저장 (*User Information Save*)**  
@@ -96,18 +96,22 @@
 
 ## Art Resources
 
-- `` → 
+- `` → [캐릭터](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
+- `Resources/Images` 2D Pixel Item Pack 아이템 이미지
 
 <br><br>
 
 ## Sound Resources
 
-- [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악
-This sound used in this project are from Pixabay
-이 음악은 Pixabay에서 제공됩니다
+- [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악  
+- [Portal](https://pixabay.com/sound-effects/magic-teleport-whoosh-352764/) → 포탈 이동 소리  
+  This background music is used for the game intro scene.  
+  이 음악은 [Pixabay](https://pixabay.com)에서 제공되었습니다.
 
-Free for commercial use, no attribution required
-상업적 사용 무료, 출처 표기 불필요
+- [TownBGM](https://assetstore.unity.com/packages/audio/music/electronic/8-bit-rpg-adventure-music-pack-184726), Track: 04 Overworld → 마을 배경 음악  
+  This BGM is used in the village area of the game.  
+  이 음원은 Unity Asset Store에서 제공된 8-bit RPG Adventure Music Pack의 일부입니다.
+
 
 
 <br><br>
