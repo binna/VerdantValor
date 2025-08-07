@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Knight.Adventure
@@ -27,9 +29,13 @@ namespace Knight.Adventure
 
         void Start()
         {
+            _isBlocked = false;
+            
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
             _collider = GetComponent<CapsuleCollider2D>();
+            
+            hpBar.fillAmount = Player.GetInstance().GetHpRatio();
         }
 
         private void Update()       // 일반적인 작업
@@ -125,15 +131,15 @@ namespace Knight.Adventure
                 _rigidbody.position = new Vector2(13.5f, _rigidbody.position.y);
                 _rigidbody.linearVelocityY = _inputDir.y * Player.GetInstance().GetSpeed();
             }
-            
-            if (_inputDir.x != 0)
-            {
-                _isLadder = false;
-                var scaleX = _inputDir.x > 0 ? 1f : -1f;
-                transform.localScale = new Vector3(scaleX, 1, 1);
+
+            if (_inputDir.x == 0)
+                return;
                 
-                _rigidbody.linearVelocityX = _inputDir.x * Player.GetInstance().GetSpeed();
-            }
+            _isLadder = false;
+            var scaleX = _inputDir.x > 0 ? 1f : -1f;
+            transform.localScale = new Vector3(scaleX, 1, 1);
+            
+            _rigidbody.linearVelocityX = _inputDir.x * Player.GetInstance().GetSpeed();
         }
 
         void Jump()
@@ -192,11 +198,13 @@ namespace Knight.Adventure
                 Death();
         }
 
-        void Death()
+        private IEnumerator Death()
         {
             _animator.SetTrigger("Death");
+
+            yield return new WaitForSeconds(2f); 
             
-            // TODO 로비로 가는 로직을 만들어야 함
+            SceneManager.LoadScene((int)Define.SceneType.Town);
         }
     }
 }

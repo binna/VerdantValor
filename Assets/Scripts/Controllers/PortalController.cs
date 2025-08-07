@@ -1,5 +1,4 @@
 using System.Collections;
-using Knight.Town;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,6 +21,7 @@ namespace Knight
         private GameObject _loadingImage;
         private Image _progressBar;
         
+        private AudioClip _audioClip;
         
         private void Start()
         {
@@ -39,11 +39,13 @@ namespace Knight
                 .GetInstance()
                 .FindUIComponentByName<Image>(
                     $"{Define.UiName.Loading}", Define.UiObjectNames.IMG_PROGRESS_BAR);
+
+            _audioClip = Resources.Load<AudioClip>(Define.PORTAL_PATH);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            SoundManager.GetInstance().PlaySound(Define.SoundType.PortalEvent);
+            SoundManager.GetInstance().PlaySound(Define.SoundType.Event, _audioClip);
 
             player.BlockInput();
             

@@ -5,7 +5,8 @@ namespace Knight.Town
 {
     public class KnightController_Joystick : BasePlayer
     {
-        [SerializeField] private Image hpBar;
+        [SerializeField] 
+        private Image hpBar;
 
         private Animator _animator;
         private Rigidbody2D _rigidbody;
@@ -25,6 +26,8 @@ namespace Knight.Town
         #region 이벤트 함수
         private void Start()
         {
+            _isBlocked = false;
+            
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
             
@@ -58,6 +61,8 @@ namespace Knight.Town
                 var scaleX = _inputDir.x > 0 ? 1f : -1f;
                 transform.localScale = new Vector3(scaleX, 1, 1);
                 _rigidbody.linearVelocity = _inputDir * Player.GetInstance().GetSpeed();
+                
+                Debug.Log($"{Player.GetInstance().GetSpeed()}");
             }
         }
     }
