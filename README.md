@@ -96,23 +96,41 @@
 
 ## Art Resources
 
-- `` → [캐릭터](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
-- `Resources/Images` 2D Pixel Item Pack 아이템 이미지
+- `Art/fonts/BMJUA` → [배민 주아체](https://noonnu.cc/font_page/53)
+  
+- `Art/Images/BattleProp` → ChatGPT
+  
+- `Art/Images/Item` → [Asset Store](https://assetstore.unity.com/packages/2d/gui/icons/2d-pixel-item-asset-pack-99645)
+
+- `Art/Images/LoadingBackground` → [Asset Store](https://assetstore.unity.com/packages/2d/environments/background-for-mobile-games-portrait-2d-art-246460)
+
+- `Art/Images/Portal` → [Asset Store](https://assetstore.unity.com/packages/vfx/particles/free-quick-effects-vol-1-304424)
+ 
+- `Art/Tilemap`  
+  - Town → [itch.io](https://otterisk.itch.io/hana-caraka-topdown-tileset)
+  - Town House → [itch.io](https://anokolisa.itch.io/free-pixel-art-asset-pack-topdown-tileset-rpg-16x16-sprites)
+  - Town Npc → [itch.io](https://schwarnhild.itch.io/summer-village)
+  - Adventure → [Asset Store](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-american-forest-255694)
+
+- `Art/UI/Icon` → ChatGPT
+ 
+- `Art/UI/Joystick` → [Asset Store](https://assetstore.unity.com/packages/tools/input-management/simple-input-system-113033)
+ 
+- `캐릭터` → [itch.io](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
+ 
+- `몬스터` → [Asset Store](https://assetstore.unity.com/packages/2d/characters/monsters-creatures-fantasy-167949)
 
 <br><br>
 
 ## Sound Resources
 
-- [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악  
-- [Portal](https://pixabay.com/sound-effects/magic-teleport-whoosh-352764/) → 포탈 이동 소리  
-  This background music is used for the game intro scene.  
-  이 음악은 [Pixabay](https://pixabay.com)에서 제공되었습니다.
-
-- [TownBGM](https://assetstore.unity.com/packages/audio/music/electronic/8-bit-rpg-adventure-music-pack-184726), Track: 04 Overworld → 마을 배경 음악  
-  This BGM is used in the village area of the game.  
-  이 음원은 Unity Asset Store에서 제공된 8-bit RPG Adventure Music Pack의 일부입니다.
-
-
+- [Pixabay](https://pixabay.com)
+  - [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악  
+  - [AdventureBGM](https://pixabay.com/music/upbeat-black-box-hypocrisy-112160/) → 전투 배경 음악  
+  - [Portal](https://pixabay.com/sound-effects/magic-teleport-whoosh-352764/) → 포탈 이동 소리  
+  
+- Asset Store
+  - [TownBGM](https://assetstore.unity.com/packages/audio/music/electronic/8-bit-rpg-adventure-music-pack-184726), Track: 04 Overworld → 마을 배경 음악  
 
 <br><br>
 
