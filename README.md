@@ -96,16 +96,15 @@
 
 ## Art Resources
 
-- `Art/Animations`
 - `Art/fonts/BMJUA` → [배민 주아체](https://noonnu.cc/font_page/53)
 - `Art/Images/BattleProp` → ChatGPT
 - `Art/Images/Item` → [Asset Store](https://assetstore.unity.com/packages/2d/gui/icons/2d-pixel-item-asset-pack-99645)
 - `Art/Images/LoadingBackground` → [Asset Store](https://assetstore.unity.com/packages/2d/environments/background-for-mobile-games-portrait-2d-art-246460)
 - `Art/Images/Portal` → [Asset Store](https://assetstore.unity.com/packages/vfx/particles/free-quick-effects-vol-1-304424)
-- `Art/Tilemap` → town , adventure [Asset Store](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-american-forest-255694)
+- `Art/Tilemap` → town [바로가기](https://otterisk.itch.io/hana-caraka-topdown-tileset), house [바로가기](https://anokolisa.itch.io/free-pixel-art-asset-pack-topdown-tileset-rpg-16x16-sprites), town npc [바로가기](https://schwarnhild.itch.io/summer-village), adventure [Asset Store](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-american-forest-255694)
 - `Art/UI/Icon` → ChatGPT
-- `Art/UI/Joystick` →
-- `` → [캐릭터](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
+- `Art/UI/Joystick` → [Asset Store](https://assetstore.unity.com/packages/tools/input-management/simple-input-system-113033)
+- 캐릭터 → [바로가기](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
 - 몬스터 → [Asset Store](https://assetstore.unity.com/packages/2d/characters/monsters-creatures-fantasy-167949)
 
 <br><br>
