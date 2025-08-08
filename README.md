@@ -104,6 +104,7 @@
 ## Sound Resources
 
 - [IntroBGM](https://pixabay.com/music/solo-instruments-magic-forest-318165/) → 인트로 배경 음악  
+- [AdventureBGM](https://pixabay.com/music/upbeat-black-box-hypocrisy-112160/) → 전투 배경 음악  
 - [Portal](https://pixabay.com/sound-effects/magic-teleport-whoosh-352764/) → 포탈 이동 소리  
   This background music is used for the game intro scene.  
   이 음악은 [Pixabay](https://pixabay.com)에서 제공되었습니다.
