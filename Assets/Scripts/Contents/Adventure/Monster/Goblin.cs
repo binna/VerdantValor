@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace Knight.Adventure
 {
-    public class Goblin : MonsterCore
+    public class Goblin : BaseMonster
     {
         private const float TRACE_DISTANCE = 5f;
         private const float ATTACK_DISTANCE = 1.5f;
@@ -27,12 +27,7 @@ namespace Knight.Adventure
                 other
                     .gameObject
                     .GetComponent<KnightController_Keyboard>()
-                    .TakeDamage(atkDamage);
-                
-                other
-                    .gameObject
-                    .GetComponent<Animator>()
-                    .SetTrigger("Hit");
+                    .TakeDamage(atkDamage, other.GetComponent<BasePlayer>());
                 
                 // TODO 방향 맞추고 튕기기(유저는 튕길지는 좀 더 고민해보기)
                 var scaleX = transform.localScale.x * -1;

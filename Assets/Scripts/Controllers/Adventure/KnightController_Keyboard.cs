@@ -10,6 +10,12 @@ namespace Knight.Adventure
         [SerializeField] 
         private Image hpBar;
         
+        [SerializeField]
+        private Vector3 position;
+
+        [SerializeField]
+        private Vector3 scale;
+        
         private readonly Vector2 _crouchOffset = new(0.03912544f, 0.5389824f); 
         private readonly Vector2 _crouchSize = new(0.6767006f, 0.9599333f);
         
@@ -21,19 +27,59 @@ namespace Knight.Adventure
         private CapsuleCollider2D _collider;
 
         private Vector3 _inputDir;
-        
+
+        private bool _isDead;
         private bool _isGround;
         private bool _isAttack;
         private bool _isCombo;
         private bool _isLadder;
 
-                
         public override void UpdatePosition(Vector3 position, Vector3 scale)
         {
             _initPosition = position;
             _initScale = scale;
         }
         
+        // 공격 애니메이션에 이벤트로 연결
+        public void WaitCombo()
+        {
+            if (_isCombo)
+            {
+                Player.GetInstance().SetDamage(5f);
+                _animator.SetBool("isCombo", true);
+                return;
+            }
+        
+            _isAttack = false;
+            _animator.SetBool("isCombo", false);
+        }
+        
+        // 콤보 애니메이션에 이벤트로 연결
+        public void EndCombo()
+        {
+            _isAttack = false;
+            _isCombo = false;
+            _animator.SetBool("isCombo", false);
+        }
+
+        public void TakeDamage(float damage, BasePlayer player)
+        {
+            if (_isDead)
+                return;
+            
+            if (Player.GetInstance().GetCurrentHp() <= 0f)
+            {
+                _isDead = true;
+                StartCoroutine(Death(player));
+                return;
+            }
+            
+            Player.GetInstance().TakeDamage(damage);
+            hpBar.fillAmount = Player.GetInstance().GetHpRatio();
+            _animator.SetTrigger("Hit");
+        }
+
+        #region 이벤트 함수
         void Start()
         {
             _isBlocked = false;
@@ -84,10 +130,16 @@ namespace Knight.Adventure
             {
                 // TODO 몬스터 데미지
                 other.gameObject
-                    .GetComponent<MonsterCore>()
+                    .GetComponent<BaseMonster>()
                     .TakeDamage(Player.GetInstance().GetDamage());
                 other.gameObject.GetComponent<Animator>().SetTrigger("Hit");
-                
+
+                if (_isCombo)
+                {
+                    _isAttack = false;
+                    _isCombo = false;
+                }
+
                 // TODO 방향 맞추고 튕기기(몬스터는 무조건 튕기기)
                 var scaleX = transform.localScale.x * -1;
                 other.gameObject.transform.localScale = new Vector3(scaleX, 1, 1);
@@ -111,9 +163,13 @@ namespace Knight.Adventure
                 _rigidbody.linearVelocity = Vector2.zero;
             }
         }
+        #endregion
 
-        void InputKeyboard()
+        private void InputKeyboard()
         {
+            if (_isDead)
+                return;
+            
             var horizontal = Input.GetAxisRaw("Horizontal");     // 좌, 우
             var vertical = Input.GetAxisRaw("Vertical");         // 상, 하
 
@@ -134,7 +190,7 @@ namespace Knight.Adventure
             }
         }
 
-        void Move()
+        private void Move()
         {
             if (_isLadder)
             {
@@ -152,8 +208,11 @@ namespace Knight.Adventure
             _rigidbody.linearVelocityX = _inputDir.x * Player.GetInstance().GetSpeed();
         }
 
-        void Jump()
+        private void Jump()
         {
+            if (_isDead)
+                return;
+            
             if (Input.GetKeyDown(KeyCode.Space) && _isGround)
             {
                 _animator.SetTrigger("Jump");
@@ -161,10 +220,14 @@ namespace Knight.Adventure
             }
         }
 
-        void Attack()
+        private void Attack()
         {
+            if (_isDead)
+                return;
+            
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                Debug.Log($"공격 : {_isAttack}");
                 if (!_isAttack)
                 {
                     _isAttack = true;
@@ -177,43 +240,13 @@ namespace Knight.Adventure
             }
         }
 
-        // 공격 애니메이션에 이벤트로 연결
-        public void WaitCombo()
-        {
-            if (_isCombo)
-            {
-                Player.GetInstance().SetDamage(5f);
-                _animator.SetBool("isCombo", true);
-                return;
-            }
-        
-            _isAttack = false;
-            _animator.SetBool("isCombo", false);
-        }
-        
-        // 콤보 애니메이션에 이벤트로 연결
-        public void EndCombo()
-        {
-            _isAttack = false;
-            _isCombo = false;
-            _animator.SetBool("isCombo", false);
-        }
-
-        public void TakeDamage(float damage)
-        {
-            Player.GetInstance().TakeDamage(damage);
-            hpBar.fillAmount = Player.GetInstance().GetHpRatio();
-            
-            if (Player.GetInstance().GetCurrentHp() <= 0f)
-                Death();
-        }
-
-        private IEnumerator Death()
+        private IEnumerator Death(BasePlayer player)
         {
             _animator.SetTrigger("Death");
 
             yield return new WaitForSeconds(2f); 
             
+            player.UpdatePosition(position, scale);
             SceneManager.LoadScene((int)Define.SceneType.Town);
         }
     }
