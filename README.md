@@ -103,14 +103,10 @@
 - `Art/Images/LoadingBackground` → [Asset Store](https://assetstore.unity.com/packages/2d/environments/background-for-mobile-games-portrait-2d-art-246460)
 - `Art/Images/Portal` → [Asset Store](https://assetstore.unity.com/packages/vfx/particles/free-quick-effects-vol-1-304424)
 - `Art/Tilemap` → town , adventure [Asset Store](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-american-forest-255694)
-- `Art/UI/Icon` →
+- `Art/UI/Icon` → ChatGPT
 - `Art/UI/Joystick` →
-
-monster [Asset Store](https://assetstore.unity.com/packages/2d/characters/monsters-creatures-fantasy-167949)
-
-
 - `` → [캐릭터](https://aamatniekss.itch.io/fantasy-knight-free-pixelart-animated-character)
-- `Resources/Images` 2D Pixel Item Pack 아이템 이미지
+- 몬스터 → [Asset Store](https://assetstore.unity.com/packages/2d/characters/monsters-creatures-fantasy-167949)
 
 <br><br>
 
