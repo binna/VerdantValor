@@ -17,11 +17,6 @@ namespace Knight.Town
         private Vector2 _startPosition;
         private Vector2 _currPosition;
 
-        void Start()
-        {
-            backgroundUI.SetActive(false);
-        }
-
         // 마우스 버튼 또는 터치가 눌렸을 때 호출
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -58,5 +53,12 @@ namespace Knight.Town
             handlerUI.transform.position = Vector2.zero;
             backgroundUI.SetActive(false);
         }
+
+        #region 이벤트 함수
+        void Start()
+        {
+            backgroundUI.SetActive(false);
+        }
+        #endregion
     }
 }

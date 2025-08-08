@@ -7133,6 +7133,8 @@ MonoBehaviour:
   portalEffect: {fileID: 6441873369262268840}
   scene: 1
   player: {fileID: 1372053306}
+  position: {x: -20.16, y: -3.88, z: 0}
+  scale: {x: 1, y: 1, z: 1}
 --- !u!1 &297754849
 GameObject:
   m_ObjectHideFlags: 0
@@ -14965,10 +14967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51dcdfe7cb1a479093d5da3878b21c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmVolume: {fileID: 0}
-  eventVolume: {fileID: 0}
-  bgmMute: {fileID: 0}
-  eventMute: {fileID: 0}
 --- !u!1 &971558370
 GameObject:
   m_ObjectHideFlags: 0
@@ -18115,6 +18113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df0e9f9c7d83c647bbc60aff9ec79e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {x: -19.05, y: 1.52, z: 0}
+  scale: {x: 1, y: 1, z: 1}
   hpBar: {fileID: 1378768259}
 --- !u!70 &1372053307
 CapsuleCollider2D:
@@ -80694,7 +80694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!198 &6666297718321573040
 ParticleSystem:
   m_ObjectHideFlags: 0

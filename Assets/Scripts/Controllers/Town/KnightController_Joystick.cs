@@ -23,10 +23,19 @@ namespace Knight.Town
             _animator.SetFloat("JoystickY", _inputDir.y);
         }
 
+        public override void UpdatePosition(Vector3 position, Vector3 scale)
+        {
+            _initPosition = position;
+            _initScale = scale;
+        }
+
         #region 이벤트 함수
         private void Start()
         {
             _isBlocked = false;
+            
+            transform.position = _initPosition;
+            transform.localScale = _initScale;
             
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -61,8 +70,6 @@ namespace Knight.Town
                 var scaleX = _inputDir.x > 0 ? 1f : -1f;
                 transform.localScale = new Vector3(scaleX, 1, 1);
                 _rigidbody.linearVelocity = _inputDir * Player.GetInstance().GetSpeed();
-                
-                Debug.Log($"{Player.GetInstance().GetSpeed()}");
             }
         }
     }

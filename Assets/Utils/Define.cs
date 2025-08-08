@@ -13,13 +13,13 @@ namespace Knight
         {
             Town = 0,
             Adventure,
+            Intro
         }
 
         public enum SoundType
         {
-            IntroBgm,
-            TownBgm,
-            PortalEvent
+            Bgm,
+            Event
         }
 
         public enum UiName
@@ -81,11 +81,13 @@ namespace Knight
             
             public const string TXT_ID = "Txt_Id";
             public const string TXT_LEVEL = "Txt_Level";
+            public const string TXT_GOLD = "Txt_Gold";
         }
         
         // Sounds
         public const string INTRO_BGM_PATH = "Sounds/IntroBGM";
         public const string TOWN_BGM_PATH = "Sounds/TownBGM";
+        public const string ADVENTURE_BGM_PATH = "Sounds/AdventureBGM";
         public const string PORTAL_PATH = "Sounds/Portal";
         
         // speed

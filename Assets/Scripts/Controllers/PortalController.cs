@@ -16,6 +16,12 @@ namespace Knight
         [SerializeField]
         private BasePlayer player;
         
+        [SerializeField]
+        private Vector3 position;
+
+        [SerializeField]
+        private Vector3 scale;
+        
         private FadeRoutine _fade;
         
         private GameObject _loadingImage;
@@ -72,7 +78,8 @@ namespace Knight
             
                 yield return null;
             }
-
+            
+            player.UpdatePosition(position, scale);
             SceneManager.LoadScene((int)scene);
         }
     }

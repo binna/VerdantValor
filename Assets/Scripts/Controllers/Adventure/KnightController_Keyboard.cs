@@ -27,9 +27,19 @@ namespace Knight.Adventure
         private bool _isCombo;
         private bool _isLadder;
 
+                
+        public override void UpdatePosition(Vector3 position, Vector3 scale)
+        {
+            _initPosition = position;
+            _initScale = scale;
+        }
+        
         void Start()
         {
             _isBlocked = false;
+            
+            transform.position = _initPosition;
+            transform.localScale = _initScale;
             
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
